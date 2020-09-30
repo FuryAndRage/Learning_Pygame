@@ -123,6 +123,43 @@ class Projectile(object):
     def draw(self, win):
         pygame.draw.circle(win, self.color, (self.x, self.y), self.radius)
 
+class Enemy(object):
+    enemy_walk_left = [
+    pygame.image.load('assets/L1E.png'),
+    pygame.image.load('assets/L2E.png'),
+    pygame.image.load('assets/L3E.png'),
+    pygame.image.load('assets/L4E.png'),
+    pygame.image.load('assets/L5E.png'),
+    pygame.image.load('assets/L6E.png'),
+    pygame.image.load('assets/L7E.png'),
+    pygame.image.load('assets/L8E.png'),
+    pygame.image.load('assets/L9E.png'),]
+
+    enemy_walk_right = [
+    pygame.image.load('assets/R1E.png'),
+    pygame.image.load('assets/R2E.png'),
+    pygame.image.load('assets/R3E.png'),
+    pygame.image.load('assets/R4E.png'),
+    pygame.image.load('assets/R5E.png'),
+    pygame.image.load('assets/R6E.png'),
+    pygame.image.load('assets/R7E.png'),
+    pygame.image.load('assets/R8E.png'),
+    pygame.image.load('assets/R9E.png'),]
+    
+    def __init__(self, x,y,width, height, end):
+        self.x = x
+        self.y = y
+        self.widht = width
+        self.height = height
+        self.end = end
+        self.walk_count = 0
+        self.vel = 3
+
+    def draw(self, win):
+        pass
+
+    def move(self):
+        
 
 player = Player(300,400,64,64)
 run = True
